@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoEstags</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #FF7200;">
+        <h1 style="color: white;"> SGE - Sistema Gerenciador de Entrevistas</h1>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto justify-content-center">
+                <li class="nav-item">
+                    <a asp-action="Create" asp-controller="Entrevista"><button type="button"
+                            class="btn btn-outline-primary">Criar Entrevista</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="Create" asp-controller="Entrevistado"><button type="button"
+                            class="btn btn-outline-primary">Adicionar novo entrevistado</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="Create" asp-controller="Entrevistador"><button type="button"
+                            class="btn btn-outline-primary">Adicionar novo entrevistador</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="Search" asp-controller="Entrevista"><button type="button"
+                            class="btn btn-outline-primary">Buscar uma Entrevista</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="List" asp-controller="Entrevista"><button type="button"
+                            class="btn btn-outline-primary">Listar todas as Entrevistas</button></a>
+                </li>
+                <li class="nav-item">
+                   <a asp-action="ListFinished" asp-controller="Entrevista"><button type="button"
+                            class="btn btn-outline-primary">Listar Entrevistas finalizadas</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="ListPending" asp-controller="Entrevista"><button type="button"
+                            class="btn btn-outline-primary">Listar Entrevistas em andamento</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="List" asp-controller="Entrevistador"><button type="button"
+                            class="btn btn-outline-primary">Listar todos os Entrevistadores</button></a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="List" asp-controller="Entrevistado"><button type="button"
+                            class="btn btn-outline-primary">Listar todas os Entrevistados</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Projeto dos Estagiários
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

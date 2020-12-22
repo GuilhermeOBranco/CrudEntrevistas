@@ -1,0 +1,19 @@
+@model ProjetoEstags.Models.Entrevistado
+
+<style>
+    input, button
+    {
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+</style>
+
+<h2 class="h2 text-center" style="color: #FF7200;">Adicionar novo entrevistado</h2>
+
+<form asp-action="Create">
+    <input asp-for="Nome" class="form-control" type="text" placeholder="Nome">
+    <input asp-for="DataNascimento" class="form-control" type="date" placeholder="Data de Nascimento">
+    <input asp-for="Endereco" class="form-control" type="text" placeholder="Endereço">
+    <input type="submit" class="btn btn-success" value="Adicionar">
+    <button type="submit" class="btn btn-danger">Cancelar</button>
+</form>

@@ -1,0 +1,13 @@
+@model Entrevista
+<h2 style="color: #FF7200;">Buscar uma entrevista</h2>
+
+<label>Id da entrevista: </label>
+<form asp-action="List" asp-controller="Entrevista">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">ID</span>
+        </div>
+        <input asp-for="Id" type="text" class="form-control">
+        <input type="submit" class="btn btn-success">
+    </div>
+</form>

@@ -1,0 +1,26 @@
+@model IEnumerable<Entrevista>
+
+<h2 class="h2 text-center" style="color: #FF7200;">Listagem de todas as Entrevistas</h2>
+
+
+
+<table class="table">
+  <thead class="thead-primary" style="background-color: #FF7200; color: white;" >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Entrevistado</th>
+      <th scope="col">Entrevistador</th>
+      <th scope="col">Andamento</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in Model)
+    {
+    <tr>
+      <td>@Html.DisplayFor(modelItem => item.Id)</td>
+      <td>@Html.DisplayFor(modelItem => item.IdEntrevistado.Nome)</td>
+      <td>@Html.DisplayFor(modelItem => item.IdEntrevistador.NomeEntrevistador)</td>
+      <td>@Html.DisplayFor(modelItem => item.Andamento)</td>
+    </tr>    
+    }
+</table>

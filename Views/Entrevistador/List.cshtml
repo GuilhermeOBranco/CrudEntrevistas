@@ -1,0 +1,20 @@
+@model IEnumerable<ProjetoEstags.Models.Entrevistador>
+
+<h1> Listagem dos Entrevistadores </h1>
+
+<table class="table">
+  <thead class="thead-primary" style="background-color: #FF7200; color: white;" >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var item in Model)
+    {
+    <tr>
+      <td>@Html.DisplayFor(modelItem => item.Id)</td>
+      <td>@Html.DisplayFor(modelItem => item.NomeEntrevistador)</td>
+    </tr>    
+    }
+</table>

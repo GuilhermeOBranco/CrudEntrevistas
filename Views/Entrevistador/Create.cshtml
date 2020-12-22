@@ -1,0 +1,18 @@
+@model ProjetoEstags.Models.Entrevistador
+
+<style>
+    input,
+    button,
+    a {
+        margin-top: 10px;
+        margin-right: 5px;
+        
+    }
+</style>
+
+<form asp-action="Create" asp-controller="Entrevistador">
+    <h2 class="h2 text-center" style="color: #FF7200;">Adicionar novo entrevistador</h2>
+    <input asp-for="NomeEntrevistador" class="form-control" type="text" placeholder="Nome">
+    <input type="submit" class="btn btn-success">
+    <a><button class="btn btn-danger">Cancelar</button></a>
+</form>

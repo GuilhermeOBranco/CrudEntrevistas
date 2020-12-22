@@ -1,0 +1,26 @@
+@model ProjetoEstags.Models.ViewModel.CriarEntrevistaViewModel
+
+<style>
+    select,
+    button,
+    a {
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+</style>
+
+
+<h2 class="h2 text-center" style="color: #FF7200;">Criar uma nova entrevista</h2>
+<form asp-action="Create" asp-controller="Entrevista">
+    <select asp-for="Entrevista.EntrevistadorId" asp-items="@(new SelectList(Model.Entrevistadores,"Id","NomeEntrevistador"))" class="form-control">
+        <option>Escolha o Entrevistador</option>
+    </select>
+    <select asp-for="Entrevista.Andamento" asp-items="Html.GetEnumSelectList<ProjetoEstags.Models.AndamentoEntrevista>()" class="form-control">
+        <option>Status da Entrevista</option>
+    </select>
+    <select asp-for="Entrevista.EntrevistadoId" asp-items="@(new SelectList(Model.Entrevistados,"Id","Nome"))" class="form-control">
+        <option>Escolha o Entrevistado</option>
+    </select>
+    <a><button class="btn btn-success">Adicionar</button></a>
+    <a><button class="btn btn-danger">Cancelar</button></a>
+</form>
